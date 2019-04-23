@@ -39,3 +39,11 @@ for the `polr` service to a port you like.
 - Make polr container use mysql config vars 
 
 - Make Polr container accept an env var for the service domain (does currently redirect to localhost)
+
+## Docs 
+
+- [Polr, Pronto with Docker](https://github.com/mackmoe/polr_pronto#polr-pronto---with-docker)
+- [Polr Docs User Installation](https://docs.polrproject.org/en/latest/user-guide/installation/)
+- [Polr Project Website](https://polrproject.org/)
+- [Polr Demo](https://demo.polr.me/)
+- [Possible alternative: Kutt.it](https://github.com/thedevs-network/kutt)
