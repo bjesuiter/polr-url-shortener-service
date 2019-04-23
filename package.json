@@ -1,0 +1,30 @@
+{
+  "name": "polr-url-shortener-service",
+  "version": "0.0.1",
+  "description": "A docker-compose setup for polr url shortnener",
+  "private": true,
+  "scripts": {
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down",
+    "restart": "docker-compose restart",
+    "logs": "docker-compose logs polr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjesuiter/polr-url-shortener-service.git"
+  },
+  "keywords": [
+    "url-shortener",
+    "short-links",
+    "short-urls",
+    "polr",
+    "polr-short-urls",
+    "polr-short-links"
+  ],
+  "author": "Benjamin Jesuiter <bjesuiter@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bjesuiter/polr-url-shortener-service/issues"
+  },
+  "homepage": "https://github.com/bjesuiter/polr-url-shortener-service#readme"
+}
