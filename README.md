@@ -28,6 +28,14 @@ for the `polr` service to a port you like.
 3. Run `npm start`
 4. Optional: Look at the other npm scripts for other useful commands for status and service maintenance.
 
+### First Time Setup 
+
+1. Go to 'https://polr.yourdomain.com/setup'
+2. Insert all db details you defined in `.env` file
+
+
 ## TODO
 
 - Make polr container use mysql config vars 
+
+- Make Polr container accept an env var for the service domain (does currently redirect to localhost)
