@@ -40,7 +40,7 @@ for the `polr` service to a port you like.
 
 - Make Polr container accept an env var for the service domain (does currently redirect to localhost)
 
-## Docs 
+## Links 
 
 - [Polr, Pronto with Docker](https://github.com/mackmoe/polr_pronto#polr-pronto---with-docker)
 - [Polr Docs User Installation](https://docs.polrproject.org/en/latest/user-guide/installation/)
