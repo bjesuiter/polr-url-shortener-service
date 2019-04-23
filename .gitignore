@@ -1,3 +1,7 @@
+# Custom Gitignore
+
+.idea
+
 # Logs
 logs
 *.log
