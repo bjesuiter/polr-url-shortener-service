@@ -1,0 +1,41 @@
+version: '3'
+
+volumes:
+  db:
+
+networks:
+  polr:
+  webproxy:
+    external:
+      name: webproxy
+
+services:
+
+  db:
+    container_name: polr-short-links-db
+    image: mariadb
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      # from env files
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - polr
+  polr:
+    container_name: polr-short-links
+    image: mackmoe/polr_docker:latest
+    restart: always
+    environment:
+      # Reverse Proxy Settings
+      VIRTUAL_HOST: ${SERVICE_DOMAIN}
+      LETSENCRYPT_HOST: ${SERVICE_DOMAIN}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+    depends_on:
+      - db
+    networks:
+      - webproxy
+      - polr
