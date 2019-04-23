@@ -4,6 +4,7 @@
   "description": "A docker-compose setup for polr url shortnener",
   "private": true,
   "scripts": {
+    "local": "docker-compose -f docker-compose.local.yml up ",
     "start": "docker-compose up -d",
     "stop": "docker-compose down",
     "restart": "docker-compose restart",

@@ -1,0 +1,34 @@
+version: '3'
+
+volumes:
+  db:
+
+networks:
+  polr:
+
+services:
+
+  db:
+    container_name: polr-short-links-db
+    image: mariadb
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      # from env files
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - polr
+  polr:
+    container_name: polr-short-links
+    image: mackmoe/polr_docker:latest
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - polr
