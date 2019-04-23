@@ -34,6 +34,8 @@ services:
       VIRTUAL_HOST: ${SERVICE_DOMAIN}
       LETSENCRYPT_HOST: ${SERVICE_DOMAIN}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+      # Polr settings
+      tld_or_ip: ${SERVICE_DOMAIN}
     depends_on:
       - db
     networks:
