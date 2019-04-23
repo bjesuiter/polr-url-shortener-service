@@ -14,3 +14,7 @@ A docker-compose setup for polr url shortnener
 2. Copy .env.sample to .env & replace all env values with the settings you need (see comments in .env file for help)
 3. Run `npm start`
 4. Optional: Look at the other npm scripts for other useful commands for status and service maintenance.
+
+## TODO
+
+- Make polr container use mysql config vars 
