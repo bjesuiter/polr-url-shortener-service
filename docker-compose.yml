@@ -48,5 +48,5 @@ services:
       - "traefik.docker.network=web"
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:${SERVICE_DOMAIN}" # multiple host-aliases with multiple host rules?
-      - "traefik.port=9000"
+      - "traefik.port=80"
       - "traefik.protocol=http"
