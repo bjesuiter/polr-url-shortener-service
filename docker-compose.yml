@@ -8,11 +8,13 @@ networks:
   webproxy:
     external:
       name: webproxy
+  web:
+    external:
+      name: web
 
 services:
 
   db:
-    container_name: polr-short-links-db
     image: mariadb
     restart: always
     volumes:
@@ -26,18 +28,25 @@ services:
     networks:
       - polr
   polr:
-    container_name: polr-short-links
     image: mackmoe/polr_docker:latest
     restart: always
     environment:
-      # Reverse Proxy Settings
+      # Polr settings
+      tld_or_ip: ${SERVICE_DOMAIN}
+      # Evertramos Reverse Proxy Settings
       VIRTUAL_HOST: ${SERVICE_DOMAIN}
       LETSENCRYPT_HOST: ${SERVICE_DOMAIN}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
-      # Polr settings
-      tld_or_ip: ${SERVICE_DOMAIN}
     depends_on:
       - db
     networks:
       - webproxy
-      - polr
+      - web
+      - polr # may be replaceable by `- default` network - check later
+    labels:
+      # Traefik Config
+      - "traefik.docker.network=web"
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:${SERVICE_DOMAIN}" # multiple host-aliases with multiple host rules?
+      - "traefik.port=80"
+      - "traefik.protocol=http"
