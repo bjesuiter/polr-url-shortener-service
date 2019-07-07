@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "local": "docker-compose -f docker-compose.local.yml up ",
-    "start": "docker-compose up -d",
+    "start": "docker-compose up -d && npm run logs",
     "stop": "docker-compose down",
     "restart": "docker-compose restart",
     "logs": "docker-compose logs polr"
