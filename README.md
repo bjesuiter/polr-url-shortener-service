@@ -1,4 +1,7 @@
 # polr-url-shortener-service
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/bjesuiter/polr-url-shortener-service.svg)](https://greenkeeper.io/)
+
 A docker-compose setup for polr url shortnener
 
 ## Local 
